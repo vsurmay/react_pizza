@@ -2,10 +2,14 @@ import React from "react";
 import classes from "./EmptyBasket.module.scss";
 import imageEmpty from "../../assets/img/empty-basket.png";
 import { useNavigate } from "react-router-dom";
-// import FillButton from "../UI/Buttons/FillButton";
+import FillButton from "../UI/Buttons/FillButton/FillButton";
 
 const EmptyBasket: React.FC = () => {
   const navigate = useNavigate();
+
+  const handleClickButton = () => {
+    navigate(-1);
+  };
 
   return (
     <div className={classes.wrapper}>
@@ -17,13 +21,7 @@ const EmptyBasket: React.FC = () => {
         Для того, щоб додати піццу, перейдіть на головну сторінку
       </p>
       <img src={imageEmpty} alt={"basket empty"} />
-      {/* <FillButton
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        Назад
-      </FillButton> */}
+      <FillButton goBackFunc={handleClickButton}>Назад</FillButton>
     </div>
   );
 };

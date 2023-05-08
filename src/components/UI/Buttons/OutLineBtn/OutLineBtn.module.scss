@@ -1,0 +1,36 @@
+@import "../../../../scss/variables";
+
+.btn {
+  font-weight: 700;
+  padding: 12px 25px;
+  background: #ffffff;
+  border: 1px solid $mainDecorColor;
+  color: $mainDecorColor;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.4s;
+
+  svg {
+    path {
+      transition: all 0.4s;
+      fill: $mainDecorColor;
+    }
+  }
+
+  &:hover {
+    background: $mainDecorColor;
+    color: #ffffff;
+
+    svg {
+      path {
+        fill: #ffffff;
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    padding: 8px 16px;
+  }
+}

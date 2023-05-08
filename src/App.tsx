@@ -15,9 +15,8 @@ function App() {
 
   useEffect(() => {
     if (!isMounted.current) {
-      const basketItems: BasketItemType[] = JSON.parse(
-        localStorage.getItem("basket")
-      );
+      const basketItems: BasketItemType[] =
+        JSON.parse(localStorage.getItem("basket")) || [];
       dispatch(getBasketProducts(basketItems));
     }
     isMounted.current = true;

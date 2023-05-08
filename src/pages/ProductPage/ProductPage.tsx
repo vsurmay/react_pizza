@@ -10,11 +10,11 @@ import {
   pizzaTypes,
   pizzaSizes,
 } from "../../components/SwitchOption/switchData";
-// import OutLibeBtn from "../../components/UI/Buttons/OutLineBtn";
 import { adedBasketProducts } from "../../redux/slices/basketSlice";
 import { FadeLoader } from "react-spinners";
 import { RootState } from "../../redux/store";
 import { useAppDispatch } from "../../redux/store";
+import OutLibeBtn from "../../components/UI/Buttons/OutLineBtn/OutLineBtn";
 
 const Product: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -129,7 +129,7 @@ const Product: React.FC = () => {
               />
             </div>
 
-            {/* <OutLibeBtn onClick={adedProduct}>
+            <OutLibeBtn handleClick={adedProduct}>
               <svg
                 width="12"
                 height="12"
@@ -143,7 +143,7 @@ const Product: React.FC = () => {
                 />
               </svg>
               <p>Додати</p>
-            </OutLibeBtn> */}
+            </OutLibeBtn>
           </div>
         </div>
       )}
