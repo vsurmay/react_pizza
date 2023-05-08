@@ -1,0 +1,39 @@
+@import "./variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap");
+
+body {
+  padding: 50px;
+  background-color: #ffdf8c;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: $mainFontFamily;
+
+  @media (max-width: 900px) {
+    padding: 30px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 15px;
+  }
+}
+
+.layout {
+  padding: 50px 60px;
+  max-width: 1340px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+
+  @media (max-width: 1170px) {
+    padding: 45px 25px;
+  }
+
+  @media (max-width: 630px) {
+    padding: 25px;
+  }
+  @media (max-width: 500px) {
+    padding: 15px;
+  }
+}

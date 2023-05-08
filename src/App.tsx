@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./scss/all.scss";
+import Header from "./components/Header/Header";
+import { Outlet } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { RootState, useAppDispatch } from "./redux/store";
+import { getBasketProducts } from "./redux/slices/basketSlice";
+import { useSelector } from "react-redux";
+import { BasketItemType } from "./redux/types";
 
 function App() {
+  const dispatch = useAppDispatch();
+  const isMounted = useRef(false);
+
+  const basketData = useSelector((state: RootState) => state.basket.data);
+
+  useEffect(() => {
+    if (!isMounted.current) {
+      const basketItems: BasketItemType[] = JSON.parse(
+        localStorage.getItem("basket")
+      );
+      dispatch(getBasketProducts(basketItems));
+    }
+    isMounted.current = true;
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(basketData));
+  }, [basketData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      <Header />
+      <Outlet />
     </div>
   );
 }

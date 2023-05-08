@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+}
+
+.describtion {
+    font-size: 18px;
+    line-height: 145.4%;
+    letter-spacing: 0.01em;
+    color: #777777;
+
+    &:nth-child(3) {
+        margin-bottom: 50px;
+    }
+}

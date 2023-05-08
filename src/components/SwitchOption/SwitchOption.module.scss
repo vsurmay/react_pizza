@@ -1,0 +1,46 @@
+.switchWrapper {
+    background: #F3F3F3;
+    border-radius: 10px;
+    padding: 7px 5px;
+    max-width: 260px;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+
+    &:last-child {
+        margin-top: 8px;
+    }
+}
+
+.item {
+    padding: 7px;
+    text-align: center;
+    width: 50%;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.015em;
+    color: #2C2C2C;
+    opacity: 0.5;
+    cursor: default;
+
+    &.available {
+        opacity: 1;
+        cursor: pointer;
+
+        &:hover {
+            background: #FFFFFF;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+            border-radius: 5px;
+        }
+
+        &.active {
+            background: #FFFFFF;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+            border-radius: 5px;
+        }
+    }
+}

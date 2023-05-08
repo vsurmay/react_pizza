@@ -1,0 +1,42 @@
+@import "../../scss/variables";
+
+.wrapper {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: $mainDecorColor;
+  border-radius: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all 0.4s;
+
+  &:hover {
+    background: #ff4a00;
+    color: rgba(255, 255, 255, 0.8);
+
+    .basketIcon {
+      transition: all 0.4s;
+      opacity: 0.8;
+    }
+  }
+
+  @media (max-width: 630px) {
+    padding: 10px 14px;
+    gap: 7px;
+  }
+}
+
+.decor {
+  display: block;
+  height: 25px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 8px;
+}

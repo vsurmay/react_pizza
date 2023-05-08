@@ -1,0 +1,71 @@
+@import "../../scss/variables";
+
+.mainTop {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  @media (max-width: 1200px) {
+    margin-top: 40px;
+    flex-direction: column;
+  }
+}
+
+.pizzaWrapper {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 15px;
+  row-gap: 30px;
+  justify-items: center;
+
+  @media (max-width: 1450px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1070px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.mainTitle {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.01em;
+
+  @media (max-width: 900px) {
+    font-size: 28px;
+  }
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+  :global {
+    .ant-pagination-item-active {
+      border-color: $mainDecorColor;
+
+      &:hover {
+        border-color: $mainDecorColor;
+
+        a {
+          color: $mainDecorColor;
+        }
+      }
+
+      a {
+        color: $mainDecorColor;
+      }
+    }
+  }
+}
