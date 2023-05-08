@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SwitchOption from "../SwitchOption/SwitchOption";
-import OutLibeBtn from "../UI/Buttons/OutLineBtn";
+// import OutLibeBtn from "../UI/Buttons/OutLineBtn";
 import classes from "./PizzaCard.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { adedBasketProducts } from "../../redux/slices/basketSlice";
@@ -95,7 +95,7 @@ const PizzaCard: React.FC<PizzaCard> = ({ pizza }) => {
           />
           <div className={classes.cardBottom}>
             <p className={classes.price}>{`від ${pizza.price} ₴`}</p>
-            <OutLibeBtn
+            {/* <OutLibeBtn
               onClick={(e: React.MouseEvent<HTMLButtonElement>): void => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -115,7 +115,7 @@ const PizzaCard: React.FC<PizzaCard> = ({ pizza }) => {
                 />
               </svg>
               <p>Додати</p>
-            </OutLibeBtn>
+            </OutLibeBtn> */}
           </div>
         </div>
       </Link>

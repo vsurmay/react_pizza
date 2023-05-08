@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./EmptyBasket.module.scss";
 import imageEmpty from "../../assets/img/empty-basket.png";
 import { useNavigate } from "react-router-dom";
-import FillButton from "../UI/Buttons/FillButton";
+// import FillButton from "../UI/Buttons/FillButton";
 
 const EmptyBasket: React.FC = () => {
   const navigate = useNavigate();
@@ -17,13 +17,13 @@ const EmptyBasket: React.FC = () => {
         Для того, щоб додати піццу, перейдіть на головну сторінку
       </p>
       <img src={imageEmpty} alt={"basket empty"} />
-      <FillButton
+      {/* <FillButton
         onClick={() => {
           navigate(-1);
         }}
       >
         Назад
-      </FillButton>
+      </FillButton> */}
     </div>
   );
 };
