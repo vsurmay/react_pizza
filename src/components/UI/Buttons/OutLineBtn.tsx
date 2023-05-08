@@ -1,5 +1,10 @@
 // import styled from "styled-components";
 // import variables from "../../../scss/_variables.scss";
+const OutLibeBtn = () => {
+  return <button>Test</button>;
+};
+
+export default OutLibeBtn;
 
 // const OutLibeBtn = styled.button`
 //   font-weight: 700;
@@ -37,4 +42,5 @@
 // `;
 
 // export default OutLibeBtn;
+
 export {};
