@@ -13,7 +13,6 @@ import PizzaCard from "../../components/PizzaCard/PizzaCard";
 import PizzaCardSkeleton from "../../components/PizzaCard/PizzaCardSkeleton";
 import PizzaEmpty from "../../components/PizzaEmpty/PizzaEmpty";
 import { Pagination } from "antd";
-import PizzaForm from "../../components/Forms/PizzaForm/PizzaForm";
 import { getPizza } from "../../redux/slices/pizzaSlice";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { PizzaItem } from "../../redux/types";
@@ -118,7 +117,6 @@ const Home: React.FC = () => {
           dispatch(changePagination(pageVal));
         }}
       />
-      {/* <PizzaForm /> */}
     </>
   );
 };

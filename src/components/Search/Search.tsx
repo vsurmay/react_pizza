@@ -14,7 +14,7 @@ const Search = () => {
 
   const updateInput = useCallback(
     debounce((val: string) => {
-      dispatch(changeSearch(val));
+      dispatch(changeSearch(val.toLowerCase()));
     }, 500),
     []
   );

@@ -8,18 +8,20 @@ type LogoProps = {
 };
 
 const Logo: React.FC<LogoProps> = ({ subtitle }) => {
+  const test = () => {
+    console.log("test");
+  };
+
   return (
-    <>
-      <Link to={"/"}>
-        <div className={classes.wrapper}>
-          <img src={logo} alt="logo" />
-          <div className={classes.describtion}>
-            <h3 className={classes.title}>REACT PIZZA</h3>
-            <p className={classes.subtitle}>{subtitle}</p>
-          </div>
+    <Link to={"/"}>
+      <div className={classes.wrapper}>
+        <img src={logo} alt="logo" />
+        <div className={classes.describtion}>
+          <h3 className={classes.title}>REACT PIZZA</h3>
+          <p className={classes.subtitle}>{subtitle}</p>
         </div>
-      </Link>
-    </>
+      </div>
+    </Link>
   );
 };
 
