@@ -1,24 +1,23 @@
 .wrapper {
-    display: flex;
-    padding: 7px 7px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    width: 250px;
+  display: flex;
+  padding: 7px 7px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 250px;
 
-    input {
-        margin-left: 6px;
-        font-size: 16px;
-    }
+  input {
+    margin-left: 6px;
+    font-size: 16px;
+  }
 }
 
 .loop {
-
-    width: 18px;
-    opacity: 0.7;
+  width: 18px;
+  opacity: 0.7;
 }
 
 .close {
-    cursor: pointer;
-    width: 14px;
-    opacity: 0.8;
+  cursor: pointer;
+  width: 14px;
+  opacity: 0.8;
 }
