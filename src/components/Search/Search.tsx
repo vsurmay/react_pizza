@@ -41,7 +41,7 @@ const Search = () => {
         type={"text"}
         placeholder={"Введіть назву піци..."}
       />
-      {inputValue && (
+      {!!inputValue && (
         <img
           className={classes.close}
           src={close}
