@@ -1,9 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home/Home";
-import Basket from "../pages/Basket/Basket";
+// import Basket from "../pages/Basket/Basket";
 import NotFound from "../pages/NotFound/NotFound";
-import ProductPage from "../pages/ProductPage/ProductPage";
+// import ProductPage from "../pages/ProductPage/ProductPage";
+import { Suspense, lazy } from "react";
+import FadeLoad from "../components/Loader/FadeLoad";
+
+const Basket = lazy(() => import("../pages/Basket/Basket"));
+const ProductPage = lazy(() => import("../pages/ProductPage/ProductPage"));
 
 export const router = createBrowserRouter([
   {
@@ -16,11 +21,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/pizza/:pizzaId",
-        element: <ProductPage />,
+        element: (
+          <Suspense fallback={<FadeLoad />}>
+            <ProductPage />
+          </Suspense>
+        ),
       },
       {
         path: "/basket",
-        element: <Basket />,
+        element: (
+          <Suspense fallback={<FadeLoad />}>
+            <Basket />
+          </Suspense>
+        ),
       },
       {
         path: "*",
