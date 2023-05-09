@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { RootState } from "../../redux/store";
 
 const Select: React.FC = () => {
-  const selectRef = useRef();
+  const selectRef = useRef<HTMLDivElement>(null);
 
   const [showPopup, setShowPopup] = useState<boolean>(false);
 

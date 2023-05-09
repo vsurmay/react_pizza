@@ -8,7 +8,12 @@ type OutLineBtnProps = {
 
 const OutLibeBtn: React.FC<OutLineBtnProps> = ({ children, handleClick }) => {
   return (
-    <button onClick={(e) => handleClick(e)} className={classes.btn}>
+    <button
+      onClick={(e) => {
+        handleClick && handleClick(e);
+      }}
+      className={classes.btn}
+    >
       {children}
     </button>
   );

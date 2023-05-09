@@ -10,7 +10,7 @@ const Search = () => {
   const dispatch = useAppDispatch();
   const [inputValue, setInputValue] = useState<string>("");
 
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const updateInput = useCallback(
     debounce((val: string) => {

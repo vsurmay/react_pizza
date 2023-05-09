@@ -35,7 +35,7 @@ export const getPizza = createAsyncThunk(
       orderBy(sortValue, sortBy)
     );
     const snapshot = await getDocs(q);
-    let pizza = [];
+    let pizza: any[] = [];
     snapshot.forEach((doc) => {
       pizza.push({ ...doc.data(), id: doc.id });
     });

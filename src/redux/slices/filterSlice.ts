@@ -31,11 +31,19 @@ export const filterSlice = createSlice({
     },
 
     setInnitialValue: (state, action) => {
-      state.category = categories.find(
+      const currentCategory = categories.find(
         (el) => el.key === action.payload.category
       );
-      state.select = options.find((el) => el.value === action.payload.sort);
+      const currentState = options.find(
+        (el) => el.value === action.payload.sort
+      );
+      if (currentCategory) {
+        state.category = currentCategory;
+      }
       state.currentPageNum = Number(action.payload.page);
+      if (currentState) {
+        state.select = currentState;
+      }
     },
   },
 });

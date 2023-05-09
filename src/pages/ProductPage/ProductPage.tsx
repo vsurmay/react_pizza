@@ -11,10 +11,10 @@ import {
   pizzaSizes,
 } from "../../components/SwitchOption/switchData";
 import { adedBasketProducts } from "../../redux/slices/basketSlice";
-import { FadeLoader } from "react-spinners";
 import { RootState } from "../../redux/store";
 import { useAppDispatch } from "../../redux/store";
 import OutLibeBtn from "../../components/UI/Buttons/OutLineBtn/OutLineBtn";
+import FadeLoad from "../../components/Loader/FadeLoad";
 
 const Product: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ const Product: React.FC = () => {
   const [messageApi, contextHolder] = message.useMessage();
 
   useEffect(() => {
-    dispatch(getPizzaProduct(pizzaId));
+    pizzaId && dispatch(getPizzaProduct(pizzaId));
   }, []);
 
   const { item: pizzaItem, itemStatus: status } = useSelector(
@@ -42,10 +42,10 @@ const Product: React.FC = () => {
     }
   }, [status]);
 
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<number>(1);
 
-  const onChange = (value) => {
-    setQuantity(value);
+  const onChange = (value: number | null) => {
+    value && setQuantity(value);
   };
 
   const adedProduct = () => {
@@ -87,7 +87,7 @@ const Product: React.FC = () => {
   };
 
   if (status === "pending") {
-    return <FadeLoader color="#FE5F1E" />;
+    return <FadeLoad />;
   }
 
   if (status === "error") {

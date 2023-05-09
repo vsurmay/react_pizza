@@ -7,8 +7,15 @@ type FillButtonProps = {
 };
 
 const FillButton: React.FC<FillButtonProps> = ({ children, goBackFunc }) => {
+  console.log(goBackFunc);
+
   return (
-    <button className={classes.btn} onClick={() => goBackFunc()}>
+    <button
+      className={classes.btn}
+      onClick={() => {
+        goBackFunc && goBackFunc();
+      }}
+    >
       {children}
     </button>
   );

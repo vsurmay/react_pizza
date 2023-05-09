@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./SwitchOptionProduct.module.scss";
+import { ValueOptionsType } from "../SwitchOption/switchData";
 
-const SwitchKind = ({
+type SwitchKindProps = {
+  avilableOption: number[];
+  allTypes: ValueOptionsType[];
+  activeOption: number;
+  setActiveOption: (val: number) => void;
+  setQuantity: (val: number) => void;
+};
+
+const SwitchKind: React.FC<SwitchKindProps> = ({
   avilableOption,
   allTypes,
   activeOption,

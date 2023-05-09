@@ -1,4 +1,4 @@
-type ValueOptionsType = {
+export type ValueOptionsType = {
   label: string;
   value: number;
 };
